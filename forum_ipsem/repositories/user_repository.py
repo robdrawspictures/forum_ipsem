@@ -34,8 +34,8 @@ def select_all():
     return users
 
 def ban_user(id):
-    sql = "UPDATE users SET(account_banned) = (%s) WHERE id = %s"
-    values = [True, id]
+    sql = "UPDATE users SET account_banned = True WHERE id = %s"
+    values = [id]
     run_sql(sql, values)
 
 def delete_all():

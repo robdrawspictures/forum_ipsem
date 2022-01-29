@@ -30,3 +30,41 @@ def select_all():
         posts.append(post)
 
     return posts
+
+def select_posts_by_user(id):
+    posts = []
+    sql = "SELECT * FROM posts WHERE user_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        post = Post(row['post_content'], row['user_id'], row['thread_id'], row['id'])
+        posts.append(post)
+
+    return posts
+
+def select_posts_by_thread(id):
+    posts = []
+    sql = "SELECT * FROM posts WHERE thread_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        post = Post(row['post_content'], row['user_id'], row['thread_id'], row['id'])
+        posts.append(post)
+
+    return posts
+
+def edit_post(edit, id):
+    sql = "UPDATE posts SET post_content = %s WHERE id = %s"
+    values = [edit, id]
+    run_sql(sql, values)
+
+def delete_post(id):
+    sql = "DELETE FROM posts WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def delete_all_posts():
+    sql = "DELETE FROM posts"
+    run_sql(sql)

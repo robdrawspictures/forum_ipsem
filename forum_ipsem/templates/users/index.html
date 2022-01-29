@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+{% for user in users %}
+<h4>{{user.user_name}}</h4>
+<img src="../../static/img/{{user.avatar_id}}.png">
+<br>
+<a href="/users/{{user.user_id}}">View Account</a>
+<hr>
+{% endfor %}
+{% endblock %}

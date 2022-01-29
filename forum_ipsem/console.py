@@ -79,15 +79,15 @@ post_repository.create_post(post8)
 
 post9 = Post('brb running away again for 20 minutes', 1, 2)
 post_repository.create_post(post9)
-test1 = post_repository.select(9)
+# test1 = post_repository.select(9)
 
-print(test1.__dict__)
+# print(test1.__dict__)
 
-post_repository.edit_post("brb running away for 10 minutes", 9)
-test2 = post_repository.select(9)
+# post_repository.edit_post("brb running away for 10 minutes", 9)
+# test2 = post_repository.select(9)
 
-print(test2.__dict__)
+# print(test2.__dict__)
 
-post_repository.delete_post(7)
+# post_repository.delete_post(7)
 
 pdb.set_trace()

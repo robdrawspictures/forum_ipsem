@@ -22,4 +22,3 @@ CREATE TABLE posts (
     user_id INT REFERENCES users(id),
     thread_id INT REFERENCES threads(id)
 );
-

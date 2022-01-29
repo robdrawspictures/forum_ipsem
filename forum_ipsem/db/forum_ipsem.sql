@@ -10,14 +10,16 @@ CREATE TABLE users (
     admin_status BOOLEAN
 );
 
-CREATE TABLE posts (
-    id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES users(id),
-    thread_id INT REFERENCES threads(id),
-    post_content TEXT
-);
-
 CREATE TABLE threads (
     id SERIAL PRIMARY KEY,
-    thread_title VARCHAR(255)
+    title VARCHAR(255),
+    creator VARCHAR(20)
 );
+
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    post_content TEXT,
+    user_id INT REFERENCES users(id),
+    thread_id INT REFERENCES threads(id)
+);
+

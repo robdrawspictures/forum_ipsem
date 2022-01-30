@@ -3,7 +3,18 @@ body {
     color: white;
 }
 
+.avatar {
+    width:128px;
+    height:auto;
+
+}
+
 #admin-tag {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#ban-tag {
     color: red;
     font-family: 'Courier New', Courier, monospace;
 }

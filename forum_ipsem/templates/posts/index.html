@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<div class="post-container">
+{% for post in posts %}
+<section class="user-info">
+{% for user in users %} 
+{% if user.user_id == post.user_id %}
+<img class="avatar" src="../../static/img/{{user.avatar_id}}.png">
+<h4>{{user.user_name}}</h4>
+{% endif %}
+{% if user.user_id == post.user_id and user.admin_status == True %}
+<h4 id="admin-tag">[Admin]</h4>
+{% elif user.user_id == post.user_id and user.account_banned == True %} 
+<h4 id="ban-tag">[BANNED]</h4>
+{% endif %}
+{% endfor %}
+</section>
+<section class="post"></section>
+<p class="post content">{{post.post_content}}</p>
+</section>
+<hr>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#admin-tag {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    color: yellow;
+}

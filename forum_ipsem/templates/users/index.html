@@ -3,6 +3,11 @@
 {% block content %} 
 {% for user in users %}
 <h4>{{user.user_name}}</h4>
+{% if user.admin_status == True %}
+<h4 id="admin-tag">[Admin]</h4>
+{% elif user.account_banned == True %} 
+<h4 id="ban-tag">[BANNED]</h4>
+{% endif %}
 <img src="../../static/img/{{user.avatar_id}}.png">
 <br>
 <a href="/users/{{user.user_id}}">View Account</a>

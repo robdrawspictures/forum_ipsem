@@ -1,5 +1,18 @@
 {% extends "base.html" %} 
 
 {% block content %} 
-Home Page Go Here.
+<p class="random_quote">{{quote}}</p>
+
+<section class="thread-container">
+    {% for thread in threads %} 
+        <h3>{{thread.title}}</h3>
+        <h5>{{thread.creator}}</h5>
+    {% endfor %}
+</section>
+
+<section class="user-container">
+    {% for user in users %} 
+        <a href="/users/{{user.user_id}}">{{user.user_name}}</a>, 
+    {% endfor %}
+</section>
 {% endblock %}

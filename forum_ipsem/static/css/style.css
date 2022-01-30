@@ -41,6 +41,16 @@ body {
     font-size: 16px;
 }
 
+/* .user-container{
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: right;
+    border: solid;
+    border-width: 1px;
+} */
+
 .avatar {
     width:128px;
     height:auto;

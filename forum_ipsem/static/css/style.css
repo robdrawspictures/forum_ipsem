@@ -3,6 +3,44 @@ body {
     color: white;
 }
 
+.title{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 10px 0px 0px 10px;
+}
+
+.header-title{
+    font-size: 42px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1;
+}
+
+.header-subtitle {
+    font-size: 24px;
+    font-style: italic;
+    font-family: monospace;
+    line-height: 1px;
+}
+
+.header-links{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 50px 0px 0px;
+}
+
+.header-link{
+    display: inline-block;
+}
+
+.navbtn{
+    background-color: maroon;
+    font-family: monospace;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
 .avatar {
     width:128px;
     height:auto;

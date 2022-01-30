@@ -9,6 +9,18 @@ body {
 
 }
 
+.avatar-selection {
+    width:40%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.agreement{
+    font-family: monospace;
+    font-style: italic;
+}
+
 #admin-tag {
     color: red;
     font-family: 'Courier New', Courier, monospace;

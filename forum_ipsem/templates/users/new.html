@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+{% block content %} 
+<h2>Complete this form to create your account.</h2>
+    <form action="/users" method="post">
+        <div>
+            <label for="user-name">Username:</label><br>
+            <input type="text" id="user_name" name="user_name" placeholder="420_blaze_it" required autofocus>
+        </div>
+        <div>
+            <label for="avatar">Select an avatar:</label>
+                <div class="avatar-selection">
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/1.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="1">
+                    </div>
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/2.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="2">
+                    </div>
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/3.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="3">
+                    </div>
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/4.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="4">
+                    </div>
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/5.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="5">
+                    </div>
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/6.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="6">
+                    </div>
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/7.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="6">
+                    </div>
+                    <div class="avatar-option">
+                        <img class="avatar" src="../../static/img/8.png"><br>
+                        <input id="avatar_id" name="avatar_id" type="radio" value="8">
+                    </div>
+                </div>
+        </div>
+        <div>
+            <label for="admin-statis">Do you do it for free?</label><br>
+            <select id="admin_status" name="admin_status">
+                <option value="True">Yes</option>
+                <option value="False">No</option>
+            </select>
+        </div>
+        <div class="terms-and-conditions">
+            <p class="agreement">Forum Ipsem accepts no liability for whatever dumb nonsense you may say or read here.</p>
+            <p class="agreement">Do you accept these terms?</p>
+            <input type="checkbox" id="agree" value="yes" required><label for="agree">Yes</label>
+            <input type="checkbox" id="disagree" value="no"><label for="disagree">No</label>
+        </div>
+        <br>
+        <button type="submit">Create Account</button>
+    </form>
+
+{% endblock %}

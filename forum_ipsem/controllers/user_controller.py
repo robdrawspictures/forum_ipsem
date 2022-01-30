@@ -10,8 +10,11 @@ def users():
     users = user_repository.select_all()
     return render_template("users/index.html", users = users)
 
+@users_blueprint.route("/users/new_user")
+def new_user():
+    return render_template("/users/new.html")
 
 @users_blueprint.route("/users/<id>")
-def show(id):
+def show_user(id):
     user = user_repository.select(id)
     return render_template("users/user.html", user = user)

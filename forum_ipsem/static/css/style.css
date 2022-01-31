@@ -58,6 +58,11 @@ body {
     margin: 10px;
 }
 
+.thread-link {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .user-info{
     width: 150px;
     height: 200px;

@@ -27,4 +27,21 @@
         </section>
     </div>
 {% endfor %}
+<form action="/threads/{{thread.thread_id}}" method="post">
+    <div>
+        <label for="user_id">User:</label>
+        <select id="user-id" name="user_id">
+          {% for user in users %}
+            <option value="{{user.user_id}}">
+              {{user.user_name}}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    <div class="post-container">
+        <input class="new-post-box" type="text" name="post_content">
+    </div>
+    <br>
+    <button type="submit">Post</button>
+</form>
 {% endblock %}

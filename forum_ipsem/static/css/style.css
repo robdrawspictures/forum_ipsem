@@ -104,12 +104,34 @@ body {
 
 /* HOME PAGE END */
 
+.profile-grid {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.profile-card {
+    display: inline;
+    width: 250px;
+    height: 300px;
+    padding: 15px;
+    margin: auto;
+    border: dotted 3px greenyellow;
+    background-color: rgb(34, 34, 34);
+}
+
 .post-container{
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: center;
     margin: 10px;
+}
+
+.signature {
+    font-family: monospace;
+    font-style: italic;
 }
 
 .thread-link {

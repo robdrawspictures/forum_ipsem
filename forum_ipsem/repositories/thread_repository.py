@@ -4,8 +4,8 @@ from models.user import User
 from models.thread import Thread
 
 def create_thread(thread):
-    sql = "INSERT INTO threads (title, creator) VALUES (%s, %s) RETURNING id"
-    values = [thread.title, thread.creator]
+    sql = "INSERT INTO threads (title, creator, locked) VALUES (%s, %s, %s) RETURNING id"
+    values = [thread.title, thread.creator, thread.locked]
     results = run_sql(sql, values)
     thread.thread_id = results[0]['id']
     return thread
@@ -17,7 +17,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        thread = Thread(result['title'], result['creator'], result['id'] )
+        thread = Thread(result['title'], result['creator'], result['locked'], result['id'] )
     return thread
 
 def select_all():
@@ -26,7 +26,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        thread = Thread(row['title'], row['creator'], row['id'])
+        thread = Thread(row['title'], row['creator'], row['locked'], row['id'])
         threads.append(thread)
 
     return threads
@@ -42,7 +42,7 @@ def users(thread):
     results = run_sql(sql, values)
 
     for row in results:
-        user = User(row['user_name'], row['avatar_id'], row['account_banned'], row['admin_status'], row['id'])
+        user = User(row['user_name'], row['sig'], row['avatar_id'], row['account_banned'], row['admin_status'], row['id'])
         users.append(user)
         
     return users

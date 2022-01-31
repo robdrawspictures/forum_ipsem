@@ -1,15 +1,20 @@
 {% extends "base.html" %} 
 
 {% block content %}
-{% for user in users %}
-<img class="avatar" src="../../static/img/{{user.avatar_id}}.png">
-<h4>{{user.user_name}}</h4>
-{% if user.admin_status == True %}
-<h4 id="admin-tag">[Admin]</h4>
-{% elif user.account_banned == True %} 
-<h4 id="ban-tag">[BANNED]</h4>
-{% endif %}
-<a href="/users/{{user.user_id}}">View Account</a>
-<hr>
-{% endfor %}
+<div class="profile-grid">
+    {% for user in users %}
+        <div class="profile-card">
+            <img class="avatar" src="../../static/img/{{user.avatar_id}}.png">
+            <h4>{{user.user_name}}</h4>
+            {% if user.admin_status == True %}
+                <h4 id="admin-tag">[Admin]</h4>
+            {% elif user.account_banned == True %} 
+                <h4 id="ban-tag">[BANNED]</h4>
+            {% endif %}
+            <h4 class="signature">"{{user.sig}}"</h4>
+            <a href="/users/{{user.user_id}}">View Account</a>
+            <hr>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}

@@ -20,6 +20,9 @@
                 {% elif user.user_id == post.user_id and user.account_banned == True %} 
                     <h4 id="ban-tag">[BANNED]</h4>
                 {% endif %}
+                {% if user.user_id == post.user_id %}
+                    <h4 class="signature">"{{user.sig}}"</h4>
+                {% endif %}
             {% endfor %}
         </section>
         <section class="post">

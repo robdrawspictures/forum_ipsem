@@ -5,6 +5,7 @@ DROP TABLE threads;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     user_name VARCHAR(20),
+    sig VARCHAR(255),
     avatar_id INT,
     account_banned BOOLEAN,
     admin_status BOOLEAN
@@ -13,7 +14,8 @@ CREATE TABLE users (
 CREATE TABLE threads (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
-    creator VARCHAR(20)
+    creator VARCHAR(20),
+    locked BOOLEAN
 );
 
 CREATE TABLE posts (

@@ -4,8 +4,8 @@ from models.user import User
 from models.thread import Thread
 
 def create_user(user):
-    sql = "INSERT INTO users (user_name, avatar_id, admin_status, account_banned) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = (user.user_name, user.avatar_id, user.admin_status, user.account_banned)
+    sql = "INSERT INTO users (user_name, sig, avatar_id, admin_status, account_banned) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    values = (user.user_name, user.sig, user.avatar_id, user.admin_status, user.account_banned)
     results = run_sql(sql, values)
     user.id = results[0]['id']
     return user
@@ -22,7 +22,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        user = User(result['user_name'], result['avatar_id'], result['account_banned'], result['admin_status'], result['id'] )
+        user = User(result['user_name'], result['sig'], result['avatar_id'], result['account_banned'], result['admin_status'], result['id'] )
     return user
     
 def select_all():
@@ -32,7 +32,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        user = User(row['user_name'], row['avatar_id'], row['account_banned'], row['admin_status'], row['id'])
+        user = User(row['user_name'], row['sig'], row['avatar_id'], row['account_banned'], row['admin_status'], row['id'])
         users.append(user)
 
     return users

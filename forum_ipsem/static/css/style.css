@@ -4,6 +4,8 @@ body {
     background-image: url("/static/img/bgbw.png");
 }
 
+/* TITLE BAR */
+
 .headbar {
     display: flex;
     flex-direction: row;
@@ -59,10 +61,15 @@ body {
     text-shadow: 0 0 0.2em #8F7;
 }
 
+/* TITLE BAR END */
+
+/* HOME PAGE */
+
 .random-quote {
     font-family: monospace;
     text-align: end;
     margin: 25px;
+    background-color: black;
 }
 
 .home-content{
@@ -82,6 +89,11 @@ body {
     background-color: rgb(49, 49, 49);
 }
 
+.thread-listing {
+    background-color: rgb(34, 34, 34);
+    padding: 3px 3px 3px 20px;
+}
+
 .user-container{
     width: 250px;
     height: 400px;
@@ -89,6 +101,8 @@ body {
     border: greenyellow 3px dashed;
     background-color: rgb(49, 49, 49);
 }
+
+/* HOME PAGE END */
 
 .post-container{
     display: flex;
@@ -123,6 +137,15 @@ body {
     padding: 15px 15px 15px 15px;
     border: solid 3px greenyellow;
     background-color: black;
+}
+
+.post > article {
+    padding: 15px 30px 15px 15px;
+}
+
+#post-id {
+    text-align: right;
+    margin:0px;
 }
 
 .avatar {

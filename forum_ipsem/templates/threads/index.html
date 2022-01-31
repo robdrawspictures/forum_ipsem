@@ -2,7 +2,28 @@
 
 {% block content %} 
 {% for thread in threads %}
-<h4><a href="/threads/{{thread.thread_id}}">{{thread.title}}</a></h4>
+<div class="thread-listing">
+    <h1><a href="/threads/{{thread.thread_id}}">{{thread.title}}</a></h1>
+    <h4>Created by {{thread.creator}}</h4>
+</div>
 <hr>
 {% endfor %}
+<h1>Create New Thread</h1>
+<form action="/threads" method="post">
+    <div>
+        <label for="creator">User:</label>
+        <select id="user-name" name="creator">
+          {% for user in users %}
+            <option value="{{user.user_name}}">
+              {{user.user_name}}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    <div class="new-title">
+        <input type="text" name="title">
+    </div>
+    <br>
+    <button type="submit">Create Thread</button>
+</form>
 {% endblock %}

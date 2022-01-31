@@ -15,6 +15,14 @@ def threads():
     users = user_repository.select_all()
     return render_template("threads/index.html", threads = threads, users = users)
 
+@threads_blueprint.route("/threads", methods=['POST'])
+def add_thread():
+    title = request.form['title']
+    creator = request.form['creator']
+    new_thread = Thread(title, creator)
+    thread_repository.create_thread(new_thread)
+    return redirect("/threads")
+
 
 @threads_blueprint.route("/threads/<id>")
 def show(id):

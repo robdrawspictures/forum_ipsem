@@ -34,3 +34,27 @@ def select_all():
 def delete_all_threads():
     sql = "DELETE FROM threads"
     run_sql(sql)
+
+def users(thread):
+    users = []
+    sql = "SELECT users.* FROM users INNER JOIN posts ON posts.user_id = users.id WHERE thread_id = %s"
+    values = [thread.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        user = User(row['user_name'], row['avatar_id'], row['account_banned'], row['admin_status'], row['id'])
+        users.append(user)
+        
+    return users
+
+def get_posts(id):
+    posts = []
+    sql = "SELECT * FROM posts WHERE thread_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        post = Post(row['post_content'], row['user_id'], row['thread_id'], row['id'])
+        posts.append(post)
+
+    return posts

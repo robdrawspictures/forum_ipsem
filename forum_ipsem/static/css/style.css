@@ -41,6 +41,41 @@ body {
     font-size: 16px;
 }
 
+.title-info {  
+    margin: 10px;
+}
+
+.title-info > h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+}
+
+.post-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.user-info{
+    width: 150px;
+    height: 200px;
+    padding: 15px;
+    border: solid 3px greenyellow;
+    line-height: 1px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.post {
+    width: 75%;
+    height: 200px;
+    padding: 15px 15px 15px 15px;
+    border: solid 3px greenyellow;
+}
+
+
 /* .user-container{
     width: 250px;
     height: 400px;
@@ -72,6 +107,7 @@ body {
 #admin-tag {
     color: red;
     font-family: 'Courier New', Courier, monospace;
+    line-height: 5px;
 }
 
 #ban-tag {

@@ -1,6 +1,13 @@
 body {
     background-color: black;
     color: white;
+    background-image: url("/static/img/bgbw.png");
+}
+
+.headbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .title{
@@ -42,12 +49,45 @@ body {
 }
 
 .title-info {  
-    margin: 10px;
+    padding: 5px 5px 5px 5px;
+    background-color: black;
 }
 
 .title-info > h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 32px;
+    text-shadow: 0 0 0.2em #8F7;
+}
+
+.random-quote {
+    font-family: monospace;
+    text-align: end;
+    margin: 25px;
+}
+
+.home-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-content > h2 {
+    padding: 0px;
+}
+
+.thread-container {
+    width: 75%;
+    margin: auto;
+    padding: 15px;
+    border: greenyellow 3px dashed;
+    background-color: rgb(49, 49, 49);
+}
+
+.user-container{
+    width: 250px;
+    height: 400px;
+    padding: 5px;
+    border: greenyellow 3px dashed;
+    background-color: rgb(49, 49, 49);
 }
 
 .post-container{
@@ -74,8 +114,7 @@ body {
     padding: 15px;
     border: solid 3px greenyellow;
     line-height: 1px;
-    /* display: flex;
-    flex-direction: column; */
+    background-color: black;
 }
 
 .post {
@@ -83,18 +122,8 @@ body {
     height: 200px;
     padding: 15px 15px 15px 15px;
     border: solid 3px greenyellow;
+    background-color: black;
 }
-
-
-/* .user-container{
-    width: 250px;
-    height: 400px;
-    display: flex;
-    flex-wrap: row wrap;
-    justify-content: right;
-    border: solid;
-    border-width: 1px;
-} */
 
 .avatar {
     width:128px;

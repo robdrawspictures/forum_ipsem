@@ -30,7 +30,10 @@ def new_post(id):
     thread_id = id
     new_post = Post(post_content, user_id, thread_id)
     post_repository.create_post(new_post)
-    return redirect("/threads/<id>")
+    thread = thread_repository.select(id)
+    posts = thread_repository.get_posts(id)
+    users = user_repository.select_all()
+    return render_template("threads/thread.html", thread = thread, posts=posts, users=users)
 
 
 

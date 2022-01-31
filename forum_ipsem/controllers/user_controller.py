@@ -16,6 +16,18 @@ def users():
 def new_user():
     return render_template("/users/new.html")
 
+@users_blueprint.route("/users/edit/<id>")
+def edit_profile(id):
+    user = user_repository.select(id)
+    return render_template("users/edit.html", user=user)
+
+@users_blueprint.route("/users/<id>", methods=['POST'])
+def confirm_edit(id):
+    user_name = request.form['user_name']
+    avatar_id = request.form['avatar_id']
+    user_repository.edit_user(user_name, avatar_id, id)
+    return redirect("/users")
+
 @users_blueprint.route("/users", methods=["POST"])
 def add_user():
     user_name = request.form["user_name"]

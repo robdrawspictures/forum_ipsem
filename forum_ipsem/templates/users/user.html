@@ -3,6 +3,7 @@
 {% block content %} 
 <h1>{{user.user_name}}</h1>
 <img src="../../static/img/{{user.avatar_id}}.png">
+<a href="/users/edit/{{user.user_id}}">Edit Profile</a>
 <hr>
 <h2>All Posts by User</h2>
 {% for post in posts %} 

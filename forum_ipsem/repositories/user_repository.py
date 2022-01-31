@@ -10,6 +10,11 @@ def create_user(user):
     user.id = results[0]['id']
     return user
 
+def edit_user(user_name, avatar_id, user_id):
+    sql = "UPDATE users SET(user_name, avatar_id) = (%s, %s) WHERE id = %s"
+    values = [user_name, avatar_id, user_id]
+    run_sql(sql, values)
+
 def select(id):
     user = None
     sql = "SELECT * FROM users WHERE id = %s"

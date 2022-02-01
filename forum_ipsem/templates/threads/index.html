@@ -1,6 +1,31 @@
 {% extends "base.html" %} 
 
 {% block content %}
+<h1 id="create-new-thread">Create New Thread</h1>
+<div class="new-thread-form">
+    <form action="/threads" method="post">
+        <div>
+            <label for="creator">User:</label>
+            <select id="user-name" name="creator">
+            {% for user in users %}
+                <option value="{{user.user_name}}">
+                {{user.user_name}}
+                </option>
+            {% endfor %}
+            </select>
+        </div>
+        <br>
+        <div>
+            <input class="new-title" type="text" name="title" placeholder="Thread Title Go Here">
+        </div>
+        <br>
+        <div>
+            <button class="acc-btn" type="submit">Create Thread</button>
+        </div>
+    </form>
+    <br>
+</div>
+<hr>
 <div class="thread-list">
     {% for thread in threads %}
         <div class="thread-listing">
@@ -18,22 +43,4 @@
         <hr>
     {% endfor %}
 </div>
-<h1>Create New Thread</h1>
-<form action="/threads" method="post">
-    <div>
-        <label for="creator">User:</label>
-        <select id="user-name" name="creator">
-          {% for user in users %}
-            <option value="{{user.user_name}}">
-              {{user.user_name}}
-            </option>
-          {% endfor %}
-        </select>
-      </div>
-    <div class="new-title">
-        <input type="text" name="title">
-    </div>
-    <br>
-    <button type="submit">Create Thread</button>
-</form>
 {% endblock %}

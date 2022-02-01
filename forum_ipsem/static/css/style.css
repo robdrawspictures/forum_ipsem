@@ -2,19 +2,18 @@ body {
     background-color: black;
     color: white;
     background-image: url("/static/img/bgbw.png");
+    background-size: cover;
 }
 
 /* TITLE BAR */
 
 .headbar {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
 .title{
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
     margin: 10px 0px 0px 10px;
 }
@@ -35,7 +34,7 @@ body {
 .header-links{
     display: flex;
     justify-content: flex-end;
-    margin: 0px 50px 0px 0px;
+    padding: 70px 20px 0px 0px;
 }
 
 .header-link{
@@ -83,6 +82,12 @@ body {
     border-radius: 5px;
 }
 
+.locked {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    text-shadow: 0 0 0.2em red;
+}
+
 /* TITLE BAR END */
 
 /* HOME PAGE */
@@ -112,8 +117,26 @@ body {
 }
 
 .thread-listing {
+    display: flex;
+    justify-content: space-between;
     background-color: rgb(34, 34, 34);
     padding: 3px 3px 3px 20px;
+}
+
+.delete-thread{
+    padding: 70px 20px 10px 10px;
+}
+
+.del-btn {
+    width: auto;
+    height: auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    background-color: black;
+    color: red;
+    text-shadow: 0 0 0.2em hotpink;
+    border-color: greenyellow;
+    border-radius: 5px;
 }
 
 .user-container{

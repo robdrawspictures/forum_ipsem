@@ -3,8 +3,16 @@
 {% block content %} 
 {% for thread in threads %}
 <div class="thread-listing">
-    <h1><a href="/threads/{{thread.thread_id}}">{{thread.title}}</a></h1>
-    <h4>Created by {{thread.creator}}</h4>
+    <section class="thread-info">
+        <h1><a href="/threads/{{thread.thread_id}}">{{thread.title}}</a></h1>
+        <div class="locked">{% if thread.locked == True %}[THREAD LOCKED]{% endif %}</div>
+        <h4>Created by {{thread.creator}}</h4>
+    </section>
+    <section class="delete-thread">
+        <form action="/threads/{{thread.thread_id}}/delete" method="POST">
+            <button class="del-btn">Delete Thread</button>
+        </form>
+    </section>
 </div>
 <hr>
 {% endfor %}

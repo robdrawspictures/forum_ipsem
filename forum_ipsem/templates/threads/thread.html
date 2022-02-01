@@ -44,7 +44,10 @@
                     <button class="p-btn">Ban</button>
                 </form>
                 {% endif %} 
-                {% endfor %} 
+                {% endfor %}
+                <form action="/posts/{{post.post_id}}/delete" method="POST">
+                    <button class="p-btn">Delete</button>
+                </form>
                 <button class="p-btn">Reply</button>
                 <button class="p-btn">Quote</button>
             </div>

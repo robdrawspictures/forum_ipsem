@@ -55,6 +55,12 @@ def select_posts_by_thread(id):
 
     return posts
 
+def get_thread_by_post(id):
+    sql = "SELECT thread_id WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)
+    return result
+
 def edit_post(edit, id):
     sql = "UPDATE posts SET post_content = %s WHERE id = %s"
     values = [edit, id]
@@ -62,6 +68,11 @@ def edit_post(edit, id):
 
 def delete_post(id):
     sql = "DELETE FROM posts WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def delete_posts_by_thread(id):
+    sql = "DELETE FROM posts WHERE thread_id = %s"
     values = [id]
     run_sql(sql, values)
 

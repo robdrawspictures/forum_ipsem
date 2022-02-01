@@ -31,6 +31,11 @@ def select_all():
 
     return threads
 
+def delete_thread(id):
+    sql = "DELETE FROM threads WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def delete_all_threads():
     sql = "DELETE FROM threads"
     run_sql(sql)

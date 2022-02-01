@@ -16,7 +16,7 @@ app.register_blueprint(users_blueprint)
 
 @app.route('/')
 def home():
-    quotes = ["ayy lmao", "the wages of sin are death", "safety not guaranteed", "Stay hydrated. This is a threat"]
+    quotes = ["ayy lmao", "The wages of sin are death.", "safety not guaranteed", "Stay hydrated. This is a threat", "fite me irl", "Snape kills Dumbledore.", "how is babby formed?"]
     quote = random.choice(quotes)
     users = user_repository.select_all()
     posts = post_repository.select_all()

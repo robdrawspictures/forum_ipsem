@@ -1,6 +1,7 @@
 {% extends "base.html" %} 
 
 {% block content %}
+<div class="posts-container">
 {% for post in posts %}
     <div class="post-container">
         <section class="user-info">
@@ -23,14 +24,23 @@
             <h6 id="post-id">Post ID #{{post.post_id}}</h6>
             <hr>
             <article>{{post.post_content}}</article>
+            <br><br><br>
             <div class="post-buttons">
-                <button class="p-btn">Ban</button>
+                {% for user in users %} 
+                {% if user.user_id == post.user_id %}
+                <form action="/users/{{user.user_id}}/ban" method="POST">
+                    <button class="p-btn">Ban</button>
+                </form>
+                {% endif %} 
+                {% endfor %}
+                <form action="/posts/{{post.post_id}}/delete" method="POST">
+                    <button class="p-btn">Delete</button>
+                </form>
                 <button class="p-btn">Reply</button>
                 <button class="p-btn">Quote</button>
             </div>
         </section>
     </div>
-    <hr>
 {% endfor %}
-
+</div>
 {% endblock %}

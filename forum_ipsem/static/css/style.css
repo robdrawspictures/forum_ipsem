@@ -1,8 +1,10 @@
 body {
     background-color: black;
+    font-family: 'Oswald', sans-serif;
     color: white;
     background-image: url("/static/img/bgbw.png");
     background-size: cover;
+    scrollbar-color: dark;
 }
 
 /* TITLE BAR */
@@ -116,11 +118,26 @@ body {
     background-color: rgb(49, 49, 49);
 }
 
+.thread-list{
+    height: 400px;
+    overflow: scroll;
+}
+
 .thread-listing {
     display: flex;
     justify-content: space-between;
     background-color: rgb(34, 34, 34);
     padding: 3px 3px 3px 20px;
+}
+
+.thread-info > h1 {
+    font-size: 54px;
+    line-height: 0px;
+}
+
+.thread-info > h4 {
+    font-size: 24px;
+    line-height: 0px;
 }
 
 .delete-thread{
@@ -152,18 +169,29 @@ body {
 .profile-grid {
     display: flex;
     flex-direction: row;
-    grid-gap: 10px;
-    justify-content: center;
+    gap: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 70vw;
+    margin: auto;
 }
 
 .profile-card {
     display: inline;
-    width: 250px;
+    width: 15%;
     height: 300px;
     padding: 15px;
     margin: auto;
     border: dotted 3px greenyellow;
     background-color: rgb(34, 34, 34);
+}
+
+.posts-container {
+    height: 635px;
+    width: auto;
+    margin: auto;
+    overflow: scroll;
+    scrollbar-color: white black;
 }
 
 .post-container{
@@ -198,9 +226,18 @@ body {
     justify-content: flex-end;
 }
 
-.new-post-box {
-    width: 75%;
-    height: 200px;
+.make-post{
+    display: flex;
+    justify-content: center;
+}
+
+.confirm-post{
+    background-color: black;
+    color: red;
+    font-size: 24px;
+    text-shadow: 0 0 0.2em hotpink;
+    border-color: greenyellow;
+    border-radius: 3px;
 }
 
 .user-info{

@@ -1,21 +1,23 @@
 {% extends "base.html" %} 
 
-{% block content %} 
-{% for thread in threads %}
-<div class="thread-listing">
-    <section class="thread-info">
-        <h1><a href="/threads/{{thread.thread_id}}">{{thread.title}}</a></h1>
-        <div class="locked">{% if thread.locked == True %}[THREAD LOCKED]{% endif %}</div>
-        <h4>Created by {{thread.creator}}</h4>
-    </section>
-    <section class="delete-thread">
-        <form action="/threads/{{thread.thread_id}}/delete" method="POST">
-            <button class="del-btn">Delete Thread</button>
-        </form>
-    </section>
+{% block content %}
+<div class="thread-list">
+    {% for thread in threads %}
+        <div class="thread-listing">
+            <section class="thread-info">
+                <h1><a href="/threads/{{thread.thread_id}}">{{thread.title}}</a></h1>
+                <div class="locked">{% if thread.locked == True %}[THREAD LOCKED]{% endif %}</div>
+                <h4>Created by {{thread.creator}}</h4>
+            </section>
+            <section class="delete-thread">
+                <form action="/threads/{{thread.thread_id}}/delete" method="POST">
+                    <button class="del-btn">Delete Thread</button>
+                </form>
+            </section>
+        </div>
+        <hr>
+    {% endfor %}
 </div>
-<hr>
-{% endfor %}
 <h1>Create New Thread</h1>
 <form action="/threads" method="post">
     <div>

@@ -9,18 +9,36 @@
     <section class="thread-container">
         <h2>Current Threads</h2>
         <hr>
-        {% for thread in threads %} 
-            <a href="/threads/{{thread.thread_id}}"><h3>{{thread.title}}</h3></a>
-            <h5>{{thread.creator}}</h5>
-            <hr>
-        {% endfor %}
+        <div class="home-threads">
+            {% for thread in threads %} 
+                <a href="/threads/{{thread.thread_id}}"><h3>{{thread.title}}</h3></a>
+                <h5>{{thread.creator}}</h5>
+                <hr>
+            {% endfor %}
+        </div>
     </section>
 
     <section class="user-container">
         <h2>Active Users</h2>
         <hr>
-        {% for user in users %} 
-            <a href="/users/{{user.user_id}}">{{user.user_name}}</a>, 
+        {% for user in users %}
+            {% if user.account_banned == False %}
+                <a href="/users/{{user.user_id}}">{{user.user_name}}</a>,
+            {% endif %}
+        {% endfor %}
+    </section>
+
+    <section class="home-posts">
+        <h2>Recent Posts</h2>
+        <hr>
+        {%for post in posts %}
+            {% for user in users %} 
+            {% if user.user_id == post.user_id %} 
+            <img class="mini-avi" src="/static/img/{{user.avatar_id}}.png">
+            {% endif %} 
+            {% endfor %}
+            <a href="/threads/{{post.thread_id}}"><h5>{{post.post_content}}</h5></a>
+            <hr>
         {% endfor %}
     </section>
 </main>

@@ -120,6 +120,7 @@ textarea {
 
 .random-quote {
     font-family: monospace;
+    font-size: 18px;
     text-align: end;
     margin: 25px;
     background-color: black;
@@ -128,6 +129,9 @@ textarea {
 .home-content{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
 }
 
 .home-content > h2 {
@@ -135,11 +139,40 @@ textarea {
 }
 
 .thread-container {
-    width: 75%;
+    width: 70%;
+    height: 400px;
     margin: auto;
     padding: 15px;
     border: greenyellow 3px dashed;
     background-color: rgb(49, 49, 49);
+}
+
+.home-threads{
+    overflow: scroll;
+    height:325px;
+}
+
+.user-container{
+    width: 20%;
+    height: 400px;
+    padding: 5px;
+    border: greenyellow 3px dashed;
+    background-color: rgb(49, 49, 49);
+}
+
+.home-posts{
+    width: 70%;
+    height: 400px;
+    overflow: scroll;
+    line-height: 1px;
+    padding: 5px;
+    border: greenyellow 3px dashed;
+    background-color: rgb(49, 49, 49);
+}
+
+.mini-avi{
+    width:50px;
+    height: auto;
 }
 
 .thread-list{
@@ -180,13 +213,6 @@ textarea {
     border-radius: 5px;
 }
 
-.user-container{
-    width: 250px;
-    height: 400px;
-    padding: 5px;
-    border: greenyellow 3px dashed;
-    background-color: rgb(49, 49, 49);
-}
 
 /* HOME PAGE END */
 
@@ -332,10 +358,12 @@ textarea {
 
 .avatar-selection {
     width:80%;
+    height: 400px;
     margin:auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    overflow: scroll;
 }
 
 .agreement{

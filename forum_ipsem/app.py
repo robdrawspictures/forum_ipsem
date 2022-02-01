@@ -19,7 +19,7 @@ def home():
     quotes = ["ayy lmao", "The wages of sin are death.", "safety not guaranteed", "Stay hydrated. This is a threat", "fite me irl", "Snape kills Dumbledore.", "how is babby formed?"]
     quote = random.choice(quotes)
     users = user_repository.select_all()
-    posts = post_repository.select_all()
+    posts = post_repository.get_most_recent_posts()
     threads = thread_repository.select_all()
     return render_template('index.html', quote = quote, users = users, threads = threads, posts = posts)
 

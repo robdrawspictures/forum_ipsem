@@ -61,6 +61,17 @@ def get_thread_by_post(id):
     result = run_sql(sql, values)
     return result
 
+def get_most_recent_posts():
+    posts = []
+    sql = "SELECT * FROM posts ORDER BY id DESC LIMIT 5"
+    results = run_sql(sql)
+
+    for row in results:
+        post = Post(row['post_content'], row['user_id'], row['thread_id'], row['id'])
+        posts.append(post)
+
+    return posts
+
 def edit_post(edit, id):
     sql = "UPDATE posts SET post_content = %s WHERE id = %s"
     values = [edit, id]

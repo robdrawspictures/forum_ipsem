@@ -28,7 +28,7 @@ def select(id):
 def select_all():
     users = []
 
-    sql = "SELECT * FROM users"
+    sql = "SELECT * FROM users ORDER BY id ASC"
     results = run_sql(sql)
 
     for row in results:

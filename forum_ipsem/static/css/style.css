@@ -243,6 +243,7 @@ textarea {
     display: inline;
     width: 15%;
     height: 300px;
+    line-height: 10px;
     padding: 15px;
     margin: auto;
     border: dotted 3px greenyellow;
@@ -306,6 +307,7 @@ textarea {
 .signature {
     font-family: monospace;
     font-style: italic;
+    line-height: 15px;
 }
 
 .thread-link {
@@ -328,19 +330,44 @@ textarea {
 }
 
 .user-info{
-    width: 150px;
-    height: 200px;
+    width: 128px;
+    height: 225px;
     padding: 15px;
     border: solid 3px greenyellow;
     line-height: 1px;
     background-color: rgb(34, 34, 34);
 }
 
-.post {
+.acc-card {
+    width: 256px;
+    padding: 10px;
+    margin: auto;
+    line-height: 10px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border: dotted 3px;
+    border-color: greenyellow;
+}
+
+#user-pro-posts{
+    padding: 0px 0px 0px 175px;
+}
+
+.acc-post {
     width: 75%;
+    margin: auto;
     height: 200px;
     padding: 15px 15px 15px 15px;
     border: solid 3px greenyellow;
+    border-radius: 5px;
+    background-color: rgba(34, 34, 34, 0.8);
+}
+
+.post{
+    width: 75%;
+    height: 225px;
+    padding: 15px 15px 15px 15px;
+    border: solid 3px greenyellow;
+    border-radius: 5px;
     background-color: rgb(34, 34, 34);
 }
 

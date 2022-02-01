@@ -36,7 +36,7 @@
             <h6 id="post-id">Post ID #{{post.post_id}}</h6>
             <hr>
             <article>{{post.post_content}}</article>
-            <br><br><br>
+            <br><br><br><br>
             <div class="post-buttons">
                 {% for user in users %} 
                 {% if user.user_id == post.user_id %}
@@ -61,7 +61,7 @@
     <div class="make-post">
         <form action="/threads/{{thread.thread_id}}" method="post">
             <div>
-                <h2><label for="user_id">User:</label></h2>
+                <h2 id="create-thread-user">User:</h2>
                 <select id="user-id" name="user_id">
                 {% for user in users %}
                     <option value="{{user.user_id}}">
@@ -70,6 +70,7 @@
                 {% endfor %}
                 </select>
             </div>
+            <br>
             <div class="enter-post">
                 <textarea id="new-post-box" name="post_content" rows="15" cols="100">
 

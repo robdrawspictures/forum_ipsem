@@ -40,7 +40,7 @@ post_repository.create_post(post1)
 post2 = Post("Shinji get in the damn robot.", 4, 1)
 post_repository.create_post(post2)
 
-post3 = Post("cope harder incel lmao", 3, 1)
+post3 = Post("lol whatever u say virgin", 3, 1)
 post_repository.create_post(post3)
 
 post4 = Post("I literally can't even, any more.", 4, 2)

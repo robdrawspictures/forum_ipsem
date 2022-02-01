@@ -254,13 +254,20 @@ textarea {
 
 .profile-card {
     display: inline;
-    width: 15%;
-    height: 300px;
+    width: 128px;
+    height: 275px;
     line-height: 10px;
     padding: 15px;
     margin: auto;
     border: dotted 3px greenyellow;
     background-color: rgba(34, 34, 34, 0.8);
+    position: relative;
+}
+
+.pro-card-footer {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
 }
 
 .posts-container {
@@ -333,6 +340,10 @@ textarea {
     justify-content: center;
 }
 
+#create-thread-user {
+    line-height: 1px;
+}
+
 .confirm-post{
     background-color: black;
     color: red;
@@ -376,7 +387,7 @@ textarea {
 }
 
 .post{
-    width: 75%;
+    width: 60%;
     height: 225px;
     padding: 15px 15px 15px 15px;
     border: solid 3px greenyellow;
@@ -403,6 +414,7 @@ textarea {
 
 #post-id {
     text-align: right;
+    font-size: 12px;
     margin:0px;
 }
 

@@ -52,4 +52,4 @@ def user_banned(id, post_id):
     edit = post.post_content + " [USER WAS BANNED FOR THIS POST]"
     post_repository.edit_post(edit, post_id)
     user_repository.ban_user(id)
-    return redirect("/users")
+    return redirect("/threads/" + str(post.thread_id))

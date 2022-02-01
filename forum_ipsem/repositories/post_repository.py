@@ -22,7 +22,7 @@ def select(id):
 
 def select_all():
     posts = []
-    sql = "SELECT * FROM posts"
+    sql = "SELECT * FROM posts ORDER BY id ASC"
     results = run_sql(sql)
 
     for row in results:

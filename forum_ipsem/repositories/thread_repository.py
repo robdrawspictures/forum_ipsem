@@ -59,7 +59,7 @@ def users(thread):
 
 def get_posts(id):
     posts = []
-    sql = "SELECT * FROM posts WHERE thread_id = %s"
+    sql = "SELECT * FROM posts WHERE thread_id = %s ORDER BY id ASC"
     values = [id]
     results = run_sql(sql, values)
 

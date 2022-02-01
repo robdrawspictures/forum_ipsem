@@ -66,6 +66,15 @@ def edit_post(edit, id):
     values = [edit, id]
     run_sql(sql, values)
 
+# def ban_edit(edit, id):
+#     sql = "UPDATE posts SET post_content = post_content & %s WHERE id = %s"
+#     values = [edit, id]
+#     run_sql(sql, values)
+
+# I found an easier way to do this in the controller, but I'm keeping
+# this code here because I'd like to find out how to make this work too
+# at some point.
+
 def delete_post(id):
     sql = "DELETE FROM posts WHERE id = %s"
     values = [id]

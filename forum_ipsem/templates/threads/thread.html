@@ -40,7 +40,7 @@
             <div class="post-buttons">
                 {% for user in users %} 
                 {% if user.user_id == post.user_id %}
-                <form action="/users/{{user.user_id}}/ban" method="POST">
+                <form action="/users/{{user.user_id}}/ban/{{post.post_id}}" method="POST">
                     <button class="p-btn">Ban</button>
                 </form>
                 {% endif %} 

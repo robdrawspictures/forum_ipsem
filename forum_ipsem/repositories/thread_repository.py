@@ -35,6 +35,11 @@ def delete_all_threads():
     sql = "DELETE FROM threads"
     run_sql(sql)
 
+def lock_thread(id):
+    sql = "UPDATE threads SET locked = True WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def users(thread):
     users = []
     sql = "SELECT users.* FROM users INNER JOIN posts ON posts.user_id = users.id WHERE thread_id = %s"

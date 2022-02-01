@@ -43,7 +43,10 @@ def new_post(id):
     users = user_repository.select_all()
     return render_template("threads/thread.html", thread = thread, posts=posts, users=users)
 
-
+@threads_blueprint.route("/threads/<id>/lock", methods=['POST'])
+def thread_locked(id):
+    thread_repository.lock_thread(id)
+    return redirect ("/threads")
 
 # Note for future self: You're going to need a find_user_by_name function to
 # get around this fine mess you've made, using the creator's name instead of

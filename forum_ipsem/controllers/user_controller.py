@@ -45,3 +45,8 @@ def show_user(id):
     posts = post_repository.select_posts_by_user(id)
     threads = thread_repository.select_all()
     return render_template("users/user.html", user = user, posts = posts, threads = threads)
+
+@users_blueprint.route("/users/<id>/ban", methods=['POST'])
+def user_banned(id):
+    user_repository.ban_user(id)
+    return redirect("/users")

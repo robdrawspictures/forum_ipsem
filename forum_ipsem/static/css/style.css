@@ -7,6 +7,30 @@ body {
     scrollbar-color: dark;
 }
 
+input {
+    background-color: rgb(29, 29, 29);
+    border-color: greenyellow;
+    border-radius: 5px;
+    border-style: solid;
+    color: white;
+}
+
+select {
+    background-color: rgb(29, 29, 29);
+    border-color: greenyellow;
+    border-radius: 5px;
+    border-style: solid;
+    color: white;
+}
+
+textarea {
+    background-color: rgb(29, 29, 29);
+    border-color: greenyellow;
+    border-radius: 5px;
+    border-style: solid;
+    color: white;
+}
+
 /* TITLE BAR */
 
 .headbar {
@@ -220,6 +244,26 @@ body {
     border-radius: 3px;
 }
 
+.acc-btn{
+    width: auto;
+    height: auto;
+    font-size: 24px;
+    background-color: black;
+    color: red;
+    text-shadow: 0 0 0.2em hotpink;
+    border-color: greenyellow;
+    border-radius: 5px;
+}
+
+.sig-bar {
+    width: 400px;
+    background-color: rgb(29, 29, 29);
+    border-color: greenyellow;
+    border-radius: 5px;
+    border-style: solid;
+    color: white;
+}
+
 .signature {
     font-family: monospace;
     font-style: italic;
@@ -265,6 +309,16 @@ body {
     padding: 15px 30px 15px 15px;
 }
 
+.create-acc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: auto;
+    padding: 25px 25px 25px 25px;
+    background-color: rgb(34, 34, 34);
+}
+
 #post-id {
     text-align: right;
     margin:0px;
@@ -277,10 +331,11 @@ body {
 }
 
 .avatar-selection {
-    width:40%;
+    width:80%;
+    margin:auto;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .agreement{

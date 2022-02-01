@@ -50,6 +50,12 @@ body {
     font-size: 16px;
 }
 
+.thread-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
 .title-info {  
     padding: 5px 5px 5px 5px;
     background-color: black;
@@ -59,6 +65,22 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 32px;
     text-shadow: 0 0 0.2em #8F7;
+}
+
+.lock-thread{
+    padding: 70px 20px 10px 10px;
+}
+
+.lock-btn{
+    width: auto;
+    height: auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    background-color: black;
+    color: red;
+    text-shadow: 0 0 0.2em hotpink;
+    border-color: greenyellow;
+    border-radius: 5px;
 }
 
 /* TITLE BAR END */
@@ -127,6 +149,20 @@ body {
     gap: 10px;
     justify-content: center;
     margin: 10px;
+}
+
+.post-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.p-btn{
+    background-color: black;
+    color: red;
+    text-shadow: 0 0 0.2em hotpink;
+    border-color: greenyellow;
+    border-radius: 3px;
 }
 
 .signature {

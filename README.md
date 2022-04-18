@@ -23,3 +23,4 @@ Planned features I will probably never get around to:
 * Pull random post text to replace the random quote generator on the homepage
 * Tidy up CSS
 * Have a static user selected that persists over all areas of the site, rather than having to select your user for each action
+* More robust user pages (display all user posts, post count, bio etc)
